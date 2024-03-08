@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\chron_expression_web.props" />
+</Project>

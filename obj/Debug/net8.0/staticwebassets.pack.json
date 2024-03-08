@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Diamond.White\\OneDrive - DART\\Documents\\chron expression web\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\chron_expression_web.bundle.scp.css",
+      "PackagePath": "staticwebassets\\chron_expression_web.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Diamond.White\\OneDrive - DART\\Documents\\chron expression web\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\Diamond.White\\OneDrive - DART\\Documents\\chron expression web\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Diamond.White\\OneDrive - DART\\Documents\\chron expression web\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\Diamond.White\\OneDrive - DART\\Documents\\chron expression web\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.chron_expression_web.props",
+      "PackagePath": "build\\chron_expression_web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.chron_expression_web.props",
+      "PackagePath": "buildMultiTargeting\\chron_expression_web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.chron_expression_web.props",
+      "PackagePath": "buildTransitive\\chron_expression_web.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.chron_expression_web.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

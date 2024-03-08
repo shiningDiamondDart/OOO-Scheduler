@@ -1,0 +1,23 @@
+@rendermode InteractiveServer
+@inject ILogger<AppointmentTime> Logger
+
+<label>
+    Start: 
+    <InputDate Type="InputDateType.Time" @bind-Value="TModel!.StartTime"/>
+</label>
+<label>
+    End: 
+    <InputDate Type="InputDateType.Time" @bind-Value="TModel!.EndTime"/>
+</label>
+<br><br>
+
+@code {
+    protected override void OnInitialized() {
+        TModel ??= new();
+    }
+    public TimeModel? TModel;
+    public class TimeModel {
+        public TimeOnly? StartTime { get; set; }
+        public TimeOnly? EndTime { get; set; }
+    }
+}

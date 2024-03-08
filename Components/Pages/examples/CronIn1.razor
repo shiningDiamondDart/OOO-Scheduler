@@ -1,0 +1,64 @@
+﻿@page "/FormExample"
+@inject ILogger<CronIn1> Logger
+ 
+
+ 
+<h2>
+    OOP generator
+</h2>
+<br />
+<EditForm Model="CronIn" OnSubmit="Submit" FormName="CronIn1">
+<table
+    cellspacing="5" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+        </tr>
+    </thead>
+        
+    <tbody>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+            <td><input type="checkbox"></td>
+        </tr>        
+    </tbody>
+</table>
+<br>
+<label>
+    Time: 
+    <InputDate @bind-Value="CronIn!.Time"/>
+</label>
+<input type="submit" value= "Submit">
+</EditForm>
+<br>
+<p>@output</p>
+
+ 
+@code {
+    
+    [SupplyParameterFromForm]
+    public CronInput? CronIn { get; set; }
+    public string output = "thinggy";
+
+    protected override void OnInitialized() => CronIn ??= new();
+
+    private void Submit()
+    {
+        Logger.LogInformation("Time = {Time}", CronIn?.Time);
+    }
+    public class CronInput {
+        public DateTime? Time { get; set; }
+    }
+    
+}

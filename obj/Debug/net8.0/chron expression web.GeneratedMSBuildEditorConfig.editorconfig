@@ -1,0 +1,67 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = chron expression web
+build_property.RootNamespace = chron expression web
+build_property.ProjectDir = C:\Users\Diamond.White\OneDrive - DART\Documents\chron expression web\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Diamond.White\OneDrive - DART\Documents\chron expression web
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Diamond.White/OneDrive - DART/Documents/chron expression web/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Diamond.White/OneDrive - DART/Documents/chron expression web/Components/Pages/AppointmentTime.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBcHBvaW50bWVudFRpbWUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Diamond.White/OneDrive - DART/Documents/chron expression web/Components/Pages/examples/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xleGFtcGxlc1xDb3VudGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Diamond.White/OneDrive - DART/Documents/chron expression web/Components/Pages/examples/CronIn1.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xleGFtcGxlc1xDcm9uSW4xLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Diamond.White/OneDrive - DART/Documents/chron expression web/Components/Pages/examples/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xleGFtcGxlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Diamond.White/OneDrive - DART/Documents/chron expression web/Components/Pages/examples/Weather.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xleGFtcGxlc1xXZWF0aGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Diamond.White/OneDrive - DART/Documents/chron expression web/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Diamond.White/OneDrive - DART/Documents/chron expression web/Components/Views/DayWeekView.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xWaWV3c1xEYXlXZWVrVmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Diamond.White/OneDrive - DART/Documents/chron expression web/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Diamond.White/OneDrive - DART/Documents/chron expression web/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-mf3oqodn0n
+
+[C:/Users/Diamond.White/OneDrive - DART/Documents/chron expression web/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-feugru8ejc
+
+[C:/Users/Diamond.White/OneDrive - DART/Documents/chron expression web/Components/Pages/Landing.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMYW5kaW5nLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-qnx0h62zmn
