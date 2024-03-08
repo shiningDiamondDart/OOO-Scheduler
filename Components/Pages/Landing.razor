@@ -19,7 +19,7 @@
             @foreach (ReccurencePatternOption opt in ReccurencePatternOptions!) {
                 <div style="margin-top: 10;">
                 
-                <input type="radio" name="ReccurenceOptions" value="@opt.Option" @onchange="@(() => SelectElement(opt.Flag))">
+                <input type="radio" name="ReccurenceOptions" @onchange="@(() => SelectElement(opt.Flag))">
                 <label>@opt.Name</label>
                 <br><br>
                 </div>
@@ -53,24 +53,23 @@ public enum ReccurenceFlags {
 
 }
 public class ReccurencePatternOption {
-    public bool Option { get; set; }
     public string? Name { get; set; }
     public ReccurenceFlags Flag = 0;
-    public ReccurencePatternOption(bool option, string name, ReccurenceFlags index) {
-        Option = option;
+    public ReccurencePatternOption(string name, ReccurenceFlags index) {
         Name = name;
         Flag = index;
     }
 }
 protected override void OnInitialized() {
-    ReccurencePatternOptions = [new ReccurencePatternOption(false, "Daily", ReccurenceFlags.Daily),
-                                new ReccurencePatternOption(false, "Weekly", ReccurenceFlags.Weekly),
-                                new ReccurencePatternOption(false, "Monthly", ReccurenceFlags.Monthly),
-                                new ReccurencePatternOption(false, "Yearly", ReccurenceFlags.Yearly) ];
+    ReccurencePatternOptions = [new ReccurencePatternOption( "Daily", ReccurenceFlags.Daily),
+                                new ReccurencePatternOption( "Weekly", ReccurenceFlags.Weekly),
+                                new ReccurencePatternOption( "Monthly", ReccurenceFlags.Monthly),
+                                new ReccurencePatternOption( "Yearly", ReccurenceFlags.Yearly) ];
     
 }
 public void SelectElement(ReccurenceFlags Flag) {
     ReccurenceSelection = Flag;
+    Console.WriteLine(Flag.ToString());
     base.StateHasChanged();
 }
 }

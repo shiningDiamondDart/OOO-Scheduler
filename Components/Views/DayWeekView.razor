@@ -1,12 +1,16 @@
 @rendermode InteractiveServer
 @inject ILogger<DayWeekView> Logger
+
+@using chron_expression_web.Client.ViewModels
+@using chron_expression_web.Client.Models
+
+@inject DayWeekViewModel ViewModel
  
 
-<table
-    cellspacing="5" cellpadding="5">
+<table cellspacing="5" cellpadding="5">
     <thead>
         <tr>
-            @foreach (var day in dayWeek!.Days)
+            @foreach (var day in ViewModel.dayWeek.Days)
             {
                 <th>@day</th>
             }
@@ -15,97 +19,19 @@
         
     <tbody>
         <tr>
-        @foreach (var CheckableDayOfWeek in dayWeek!.CheckableDaysOfWeek) 
+        @foreach (var CheckableDayOfWeek in ViewModel.dayWeek.CheckableDaysOfWeek) 
         {
-            <td><input type="checkbox" @bind = "@CheckableDayOfWeek.IsSelected"/></td>
+            <td><input type="checkbox" @onchange = "(() => {CheckableDayOfWeek.FlipIsSelected(); ViewModel.OnPropertyChanged();})"/></td>
         }
        
         </tr>        
     </tbody>
 </table>
 <br>
-<input type="button" value= "Submit" @onclick="Submit">
+<!--<input type="button" value= "Submit" @onclick="DayWeek.GetChron">-->
 
 <br>
 <p>cron:</p>
-<p>@output</p>
+<p>@ViewModel.dayWeek.output</p>
 
  
-@code {
-    public DayWeekModel? dayWeek { get; set; }
-    public string output = "";
-    
-    protected override void OnInitialized() {
-        dayWeek = new DayWeekModel();
-        dayWeek.Days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-        dayWeek.CheckableDaysOfWeek = new List<DayWeekModel.CheckableDayOfWeek>();
-        //initialise the CheckableDaysOfWeek list with the enums for the days of the week in the order of the enum
-        foreach (int DOfWeek in Enum.GetValues(typeof(DayWeekModel.DaysOfWeek))) {
-            if (DOfWeek != 0) {
-                dayWeek.CheckableDaysOfWeek.Add(new DayWeekModel.CheckableDayOfWeek() {SpecificDayOfWeek = (DayWeekModel.DaysOfWeek)DOfWeek});
-            }
-        }
-    } 
-
-    public void Submit()
-    {
-
-        //set Sum enum based on IsSelected of all the checkable DayOfWeeks in the list
-        dayWeek!.SumOfDays = (DayWeekModel.DaysOfWeek)dayWeek.CheckableDaysOfWeek.Where(cd => cd.IsSelected).Select(cd => (int)cd.SpecificDayOfWeek).Sum();
-        Logger.LogInformation(((int)dayWeek.SumOfDays).ToString());
-
-        output = DayWeekModel.GetCron();
-    }
-    {
-        string output = "";
-        string[] crondigs = ["", "", "", "", ""];
-        
-
-        int Last = -1;
-        foreach (DayWeekModel.DaysOfWeek DOfWeek in Enum.GetValues(typeof(DayWeekModel.DaysOfWeek))) {
-            //if the sum has the current day
-            if ((DOfWeek & dayWeek!.SumOfDays) != 0) {  
-                int Next;
-                if (DOfWeek != DayWeekModel.DaysOfWeek.Saturday) {
-                    //Next = 1 if sum has the next day, 0 if not
-                    Next = (int)DOfWeek << 1 & (int)dayWeek!.SumOfDays;
-                } else {
-                    Next = -1;
-                }
-                    
-                if (Last == 0) {
-                    if (Next < 1) {
-                        crondigs[4] += Math.Log((int)DOfWeek, 2) + ",";
-                    } else {
-                        crondigs[4] += Math.Log((int)DOfWeek, 2) + "";
-                    }
-                    
-                }
-                else if (Next == 0 || Next == -1){
-                    crondigs[4] += "-" + Math.Log((int)DOfWeek, 2) + ",";
-                }
-                    
-               Last = 1;
-                
-            } else {Last = 0;}
-        }
-
-        if (crondigs[4].EndsWith(",")) {
-            crondigs[4] = crondigs[4].Remove(crondigs[4].Length-1);
-        }
-        
-        foreach (string thing in crondigs) {
-            if (thing == "") {
-                output += "* ";
-            }
-            else {
-                output += thing + " ";
-            }
-        }
-
-        Logger.LogInformation(output);
-        return output;
-    }
-        
-    
-}

@@ -1,23 +1,41 @@
-public class DayWeekModel {
+namespace chron_expression_web.Client.Models
+{     
+    [Flags]
+    public enum DaysOfWeek
+    {
+        None = 0,
+        Sunday = 1,          
+        Monday = 1 << 1,    
+        Tuesday = 1 << 2,  
+        Wednesday = 1 << 3,
+        Thursday = 1 << 4,
+        Friday = 1 << 5,
+        Saturday = 1 << 6  
+    }
+    public class CheckableDayOfWeek 
+    {
+        public DaysOfWeek SpecificDayOfWeek { get; set; }
+        public bool IsSelected { get; set; }
+        public void FlipIsSelected()
+        {
+            Console.WriteLine("Im flippin");
+            IsSelected = !IsSelected;
+        }
+    }
+    public class DayWeek 
+    {
         public string[] Days { get; set;} = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
         public DaysOfWeek SumOfDays;
-        public List<CheckableDayOfWeek> CheckableDaysOfWeek { get; set; } = new List<CheckableDayOfWeek>();     
-        
-        [Flags]
-        public enum DaysOfWeek  {
-            None = 0,
-            Sunday = 1,          
-            Monday = 1 << 1,    
-            Tuesday = 1 << 2,  
-            Wednesday = 1 << 3,
-            Thursday = 1 << 4,
-            Friday = 1 << 5,
-            Saturday = 1 << 6  
+        public List<CheckableDayOfWeek> CheckableDaysOfWeek { get; set; } = new List<CheckableDayOfWeek>(); 
+        public string output = "";     
+        public DayWeek()
+        {
+            foreach (int DOfWeek in Enum.GetValues(typeof(DaysOfWeek))) {
+            if (DOfWeek != 0) {
+                CheckableDaysOfWeek.Add(new CheckableDayOfWeek() {SpecificDayOfWeek = (DaysOfWeek)DOfWeek});
+            }
         }
-        public class CheckableDayOfWeek {
-            public DaysOfWeek SpecificDayOfWeek { get; set; }
-            public bool IsSelected { get; set; }
-        }
+        }       
         public string GetCron() 
         {
             string output = "";            
@@ -55,8 +73,6 @@ public class DayWeekModel {
             }
 
             return output;
-        }
+            }
     }
-
-
-        
+}        
