@@ -22,7 +22,7 @@
         
         @foreach (var CheckableDayOfWeek in ViewModel.CheckableDaysOfWeek) 
         {
-            <td><input type="checkbox"  @onchange = "((ChangeEventArgs e) => {CheckableDayOfWeek.IsSelected=(bool)e.Value!; ViewModel.OnDayWeekChanged();})"/></td>
+            <td><input type="checkbox" @onchange = "((ChangeEventArgs e) => {CheckableDayOfWeek.IsSelected=(bool)e.Value!; ViewModel.OnDayWeekChanged();})"/></td>
         }
        
         </tr>        
@@ -34,4 +34,5 @@
 <br>
 <p>cron:</p>
 <p>@ViewModel.output</p>
+<MessageProvider />
 

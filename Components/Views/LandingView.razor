@@ -1,0 +1,79 @@
+@rendermode InteractiveServer
+@page "/"
+
+@using chron_expression_web.Components.Views
+@using chron_expression_web.Components.Pages
+
+@using chron_expression_web.Client.ViewModels
+@using chron_expression_web.Client.Models
+
+@inject LandingViewModel ViewModel
+
+
+<fieldset>
+    <legend class = "float-none w-auto">Time</legend>
+    <div>
+        <AppointmentTime/>
+    </div>
+</fieldset>
+<fieldset>
+    <legend class="float-none w-auto">Recurrence Patern</legend>
+    <div class = "d-flex" style="margin-left: 0;">
+        <div style="margin-left: 0;  width: 20%">
+            @foreach (ReccurencePatternOption opt in ViewModel.landingModel.ReccurencePatternOptions!) {
+                <div style="margin-top: 10;">
+                
+                <input type="radio" name="ReccurenceOptions" @onchange="@(() => ViewModel.SelectElement(opt.Flag))">
+                <label>@opt.Name</label>
+                <br><br>
+                </div>
+            }
+        </div>
+        <div hidden="@ViewModel.WeekHidden">
+            <DayWeekView/>
+        </div>
+           
+    </div>
+</fieldset>
+
+<style>
+
+body{
+  font-family: 'Averia Serif Libre';
+  margin: auto; 
+  margin-top: 25vh;
+  width: 320px; height: 320px;
+}
+div {
+    margin-left: 10px;
+}
+fieldset {
+    border: solid;
+    padding: 10px;
+    box-sizing: content-box;
+    display: block;
+    float: none;
+    line-height: normal;
+    position: static;
+    z-index: auto;
+    border: 1px groove #ddd !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+legend {
+    font-size: 1.2em !important;
+    
+}
+.flex-container {
+  display: flex;
+  background-color: DodgerBlue;
+}
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+</style>

@@ -203,17 +203,17 @@ main[b-mf3oqodn0n] {
         overflow-y: auto;
     }
 }
-/* _content/chron_expression_web/Components/Pages/Landing.razor.rz.scp.css */
-body[b-qnx0h62zmn]{
+/* _content/chron_expression_web/Components/Views/LandingView.razor.rz.scp.css */
+body[b-ujjedjse1o]{
     font-family: 'Averia Serif Libre';
     margin: auto; 
     margin-top: 25vh;
     width: 320px; height: 320px;
   }
-  div[b-qnx0h62zmn] {
+  div[b-ujjedjse1o] {
       margin-left: 10%;
   }
-  fieldset[b-qnx0h62zmn] {
+  fieldset[b-ujjedjse1o] {
       border: solid;
       width: 200%;
       padding: 10px;
@@ -228,15 +228,15 @@ body[b-qnx0h62zmn]{
       -webkit-box-shadow:  0px 0px 0px 0px #000;
               box-shadow:  0px 0px 0px 0px #000;
   }
-  legend[b-qnx0h62zmn] {
+  legend[b-ujjedjse1o] {
       font-size: 1.2em !important;
       
   }
-  .flex-container[b-qnx0h62zmn] {
+  .flex-container[b-ujjedjse1o] {
     display: flex;
     background-color: DodgerBlue;
   }
-  .flex-container > div[b-qnx0h62zmn] {
+  .flex-container > div[b-ujjedjse1o] {
     background-color: #f1f1f1;
     margin: 10px;
     padding: 20px;

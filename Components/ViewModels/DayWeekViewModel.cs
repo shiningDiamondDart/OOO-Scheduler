@@ -1,9 +1,11 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using chron_expression_web.Client.Models;
+using Microsoft.AspNetCore.Components;
 
 namespace chron_expression_web.Client.ViewModels
 {
+    
     public class DayWeekViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -30,7 +32,6 @@ namespace chron_expression_web.Client.ViewModels
                     CheckableDaysOfWeek.Add(new CheckableDayOfWeek() {SpecificDayOfWeek = (DaysOfWeek)DOfWeek});
                 }
             }
-
             dayWeek = new DayWeek();
             _dayWeek = new DayWeek();
         }

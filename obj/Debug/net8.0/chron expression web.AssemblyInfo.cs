@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("chron_expression_web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d71ac6aef0965be21279bdef485c081746c55e6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33224b13fed10b6516d08fc96ee595038d0f7b23")]
 [assembly: System.Reflection.AssemblyProductAttribute("chron_expression_web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("chron_expression_web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

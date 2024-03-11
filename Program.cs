@@ -8,6 +8,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 builder.Services.AddScoped<DayWeekViewModel>();
+builder.Services.AddScoped<LandingViewModel>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
