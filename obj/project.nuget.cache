@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "u3e5RQQUvEVLlLl2sKpwNeGDOavcCbcmd5PG2oKw+UTAy0EUxg8g9Lnc7pWZSNYAWX9nrFnF6txHjl5/caDe/w==",
+  "dgSpecHash": "wX2lfB5dO0v5Y++6tvD5va4Dm3oIwJeKNVnzW9D73nbOZsfWNXXT5cT1h5AQ8lHCUNDTr39cbUT2YN03JDELgg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Diamond.White\\OneDrive - DART\\Documents\\chron expression web\\chron expression web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Diamond.White\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
     "C:\\Users\\Diamond.White\\.nuget\\packages\\dartsassbuilder\\1.0.0\\dartsassbuilder.1.0.0.nupkg.sha512",
     "C:\\Users\\Diamond.White\\.nuget\\packages\\microsoft.aspnetcore.authorization\\8.0.0\\microsoft.aspnetcore.authorization.8.0.0.nupkg.sha512",
     "C:\\Users\\Diamond.White\\.nuget\\packages\\microsoft.aspnetcore.components\\8.0.0\\microsoft.aspnetcore.components.8.0.0.nupkg.sha512",

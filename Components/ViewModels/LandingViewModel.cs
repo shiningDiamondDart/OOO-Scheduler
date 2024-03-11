@@ -1,13 +1,15 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using chron_expression_web.Client.Messages;
 using chron_expression_web.Client.Models;
-using Microsoft.AspNetCore.Components;
+using CommunityToolkit.Mvvm.Messaging;
 
 
 namespace chron_expression_web.Client.ViewModels
 {
     public class LandingViewModel : INotifyPropertyChanged
     {
+        public WeakReferenceMessenger Messenger;
         public event PropertyChangedEventHandler? PropertyChanged;
         private LandingModel _landingModel;
         public LandingModel landingModel
@@ -26,7 +28,8 @@ namespace chron_expression_web.Client.ViewModels
             DayHidden = true; WeekHidden = true; MonthHidden = true; YearHidden = true;
             landingModel = new LandingModel();
             _landingModel = new LandingModel();
-
+            WeakReferenceMessenger.Default.Register<Message>(this, (r, m) => {Console.WriteLine(m.Value);});
+            
         }
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
@@ -41,10 +44,6 @@ namespace chron_expression_web.Client.ViewModels
             YearHidden = !(ReccurenceFlags.Yearly == ReccurenceSelection);
 
         }
-        public void ReceiveMessage(string message)
-        {
-            // Handle the received message
-            Console.WriteLine($"Received message in ViewModel2: {message}");
-        }
+        
     }
 }

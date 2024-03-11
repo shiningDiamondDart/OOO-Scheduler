@@ -1,5 +1,8 @@
+using CommunityToolkit.Mvvm.Messaging;
+
 namespace chron_expression_web.Client.Models
 {
+    
     public class LandingModel
     {
         public List<ReccurencePatternOption>? ReccurencePatternOptions = new List<ReccurencePatternOption>();
@@ -11,6 +14,7 @@ namespace chron_expression_web.Client.Models
                                 new ReccurencePatternOption( "Yearly", ReccurenceFlags.Yearly) ];
         }
     }
+    
     public enum ReccurenceFlags 
     {
         None = 0,

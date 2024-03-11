@@ -1,5 +1,6 @@
 using chron_expression_web.Client.ViewModels;
 using chron_expression_web.Components;
+using CommunityToolkit.Mvvm.Messaging;
 using Radzen.Blazor.Rendering;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +10,7 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddScoped<DayWeekViewModel>();
 builder.Services.AddScoped<LandingViewModel>();
+builder.Services.AddScoped<WeakReferenceMessenger>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

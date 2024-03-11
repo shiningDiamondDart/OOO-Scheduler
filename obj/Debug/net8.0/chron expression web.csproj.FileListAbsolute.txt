@@ -32,3 +32,4 @@ C:\Users\Diamond.White\OneDrive - DART\Documents\chron expression web\bin\Debug\
 C:\Users\Diamond.White\OneDrive - DART\Documents\chron expression web\bin\Debug\net8.0\System.Linq.Dynamic.Core.dll
 C:\Users\Diamond.White\OneDrive - DART\Documents\chron expression web\obj\Debug\net8.0\chron ex.B1245AB3.Up2Date
 C:\Users\Diamond.White\OneDrive - DART\Documents\chron expression web\obj\Debug\net8.0\scopedcss\Components\Views\LandingView.razor.rz.scp.css
+C:\Users\Diamond.White\OneDrive - DART\Documents\chron expression web\bin\Debug\net8.0\CommunityToolkit.Mvvm.dll

@@ -1,7 +1,10 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using chron_expression_web.Client.Models;
+using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.AspNetCore.Components;
+using chron_expression_web.Client.Messages;
+
 
 namespace chron_expression_web.Client.ViewModels
 {
@@ -43,6 +46,8 @@ namespace chron_expression_web.Client.ViewModels
         {
             OnPropertyChanged(propertyName);
             output = Submit();
+            WeakReferenceMessenger.Default.Send(new Message("hey"));
+
         }
         public string ResetDayWeek()
         {
