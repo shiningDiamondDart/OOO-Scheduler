@@ -7,6 +7,8 @@ namespace chron_expression_web.Client.ViewModels
     public class DayWeekViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
+        public List<CheckableDayOfWeek> CheckableDaysOfWeek { get; set; } = new List<CheckableDayOfWeek>(); 
+        public string output = "";
         private DayWeek _dayWeek;
         public DayWeek dayWeek
         {
@@ -20,23 +22,38 @@ namespace chron_expression_web.Client.ViewModels
         public DayWeekViewModel()
         {
             Console.WriteLine("INITALIZING VIEWMODEL");
+
+            foreach (int DOfWeek in Enum.GetValues(typeof(DaysOfWeek)))
+            {
+                if (DOfWeek != 0)
+                {
+                    CheckableDaysOfWeek.Add(new CheckableDayOfWeek() {SpecificDayOfWeek = (DaysOfWeek)DOfWeek});
+                }
+            }
+
             dayWeek = new DayWeek();
             _dayWeek = new DayWeek();
         }
-        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            dayWeek.output = Submit();
+        }
+        public void OnDayWeekChanged([CallerMemberName] string propertyName = null)
+        {
+            OnPropertyChanged(propertyName);
+            output = Submit();
+        }
+        public string ResetDayWeek()
+        {
+            foreach (CheckableDayOfWeek DOWeek in CheckableDaysOfWeek)
+            {
+                DOWeek.IsSelected = false;
+            }
+            return "";
         }
         public string Submit()
         {
-            _dayWeek.SumOfDays = (DaysOfWeek)_dayWeek.CheckableDaysOfWeek.Where(cd => cd.IsSelected).Select(cd => (int)cd.SpecificDayOfWeek).Sum();
-
-            Console.WriteLine("cron is "+dayWeek.GetCron());
-            foreach (var CheckableDayOfWeek in _dayWeek.CheckableDaysOfWeek)
-            {
-                Console.WriteLine(CheckableDayOfWeek.SpecificDayOfWeek.ToString()+ " " +CheckableDayOfWeek.IsSelected);
-            }
+            _dayWeek.SumOfDays = (DaysOfWeek)CheckableDaysOfWeek.Where(cd => cd.IsSelected).Select(cd => (int)cd.SpecificDayOfWeek).Sum();
             return _dayWeek.GetCron();
         }
     }

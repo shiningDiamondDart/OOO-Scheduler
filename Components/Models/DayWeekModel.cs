@@ -18,24 +18,13 @@ namespace chron_expression_web.Client.Models
         public bool IsSelected { get; set; }
         public void FlipIsSelected()
         {
-            Console.WriteLine("Im flippin");
             IsSelected = !IsSelected;
         }
     }
     public class DayWeek 
     {
         public string[] Days { get; set;} = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-        public DaysOfWeek SumOfDays;
-        public List<CheckableDayOfWeek> CheckableDaysOfWeek { get; set; } = new List<CheckableDayOfWeek>(); 
-        public string output = "";     
-        public DayWeek()
-        {
-            foreach (int DOfWeek in Enum.GetValues(typeof(DaysOfWeek))) {
-            if (DOfWeek != 0) {
-                CheckableDaysOfWeek.Add(new CheckableDayOfWeek() {SpecificDayOfWeek = (DaysOfWeek)DOfWeek});
-            }
-        }
-        }       
+        public DaysOfWeek SumOfDays;      
         public string GetCron() 
         {
             string output = "";            

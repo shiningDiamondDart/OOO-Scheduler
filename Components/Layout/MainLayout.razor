@@ -1,16 +1,27 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="page">
+<div class="center">
+
     <div class="sidebar">
-        
     </div>
     <h2>
     OOO generator
     </h2>
     <main>
+        @Body
         <article class="content px-4">
-            @Body
+            
         </article>
         
     </main>
 </div>
+
+<style>
+.center {
+    margin: auto;
+    width: 500px;
+    margin-left: 0px;
+    margin-right: auto;
+}
+
+</style>

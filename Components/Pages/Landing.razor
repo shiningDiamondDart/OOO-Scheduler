@@ -27,7 +27,7 @@
         </div>
         @if (ReccurenceSelection == ReccurenceFlags.Weekly){
             <div style="margin-left: 20px">
-                <DayWeekView/>
+                <DayWeekView @ref="DayWeekViewRef"/>
             </div>
         }            
     </div>
@@ -39,6 +39,7 @@
 
 
 @code {
+private DayWeekView DayWeekViewRef;
 public ReccurenceFlags ReccurenceSelection;
 public ReccurencePatternOption? Daily, Weekly, Monthly, Yearly;
 public List<ReccurencePatternOption>? ReccurencePatternOptions;
@@ -70,7 +71,8 @@ protected override void OnInitialized() {
 public void SelectElement(ReccurenceFlags Flag) {
     ReccurenceSelection = Flag;
     Console.WriteLine(Flag.ToString());
-    base.StateHasChanged();
+    //DayWeekViewRef.ViewModel.ResetDayWeek();
+    //base.StateHasChanged();
 }
 }
 
@@ -84,11 +86,10 @@ body{
   width: 320px; height: 320px;
 }
 div {
-    margin-left: 10%;
+    margin-left: 10px;
 }
 fieldset {
     border: solid;
-    width: 200%;
     padding: 10px;
     box-sizing: content-box;
     display: block;
