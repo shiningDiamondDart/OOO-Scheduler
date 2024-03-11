@@ -20,7 +20,7 @@
     <legend class="float-none w-auto">Recurrence Pattern</legend>
     <div class = "d-flex" style="margin-left: 0;">
         <div style="margin-left: 0;  width: 20%">
-            @foreach (ReccurencePatternOption opt in ViewModel.landingModel.ReccurencePatternOptions!) {
+            @foreach (ReccurencePatternOption opt in ViewModel.Model.ReccurencePatternOptions!) {
                 <div style="margin-top: 10;">
                 
                 <input type="radio" name="ReccurenceOptions" @onchange="@(() => ViewModel.SelectElement(opt.Flag))">
@@ -37,7 +37,7 @@
 </fieldset>
 <fieldset>
     <legend class="float-none w-auto">Range of Reccurence</legend>
-    
+
 </fieldset>
 
 <style>

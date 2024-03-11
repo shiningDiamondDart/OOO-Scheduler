@@ -9,21 +9,11 @@ using chron_expression_web.Client.Messages;
 namespace chron_expression_web.Client.ViewModels
 {
     
-    public class DayWeekViewModel : INotifyPropertyChanged
+    public class DayWeekViewModel : ViewModel<DayWeek>
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
         public List<CheckableDayOfWeek> CheckableDaysOfWeek { get; set; } = new List<CheckableDayOfWeek>(); 
         public string output = "";
-        private DayWeek _dayWeek;
-        public DayWeek dayWeek
-        {
-            get { return _dayWeek; }
-            set
-            {
-                _dayWeek = value;
-                OnPropertyChanged(nameof(DayWeek));
-            }
-        }
+
         public DayWeekViewModel()
         {
             Console.WriteLine("INITALIZING VIEWMODEL");
@@ -35,12 +25,7 @@ namespace chron_expression_web.Client.ViewModels
                     CheckableDaysOfWeek.Add(new CheckableDayOfWeek() {SpecificDayOfWeek = (DaysOfWeek)DOfWeek});
                 }
             }
-            dayWeek = new DayWeek();
-            _dayWeek = new DayWeek();
-        }
-        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
         }
         public void OnDayWeekChanged([CallerMemberName] string propertyName = null)
         {
@@ -59,8 +44,8 @@ namespace chron_expression_web.Client.ViewModels
         }
         public string Submit()
         {
-            _dayWeek.SumOfDays = (DaysOfWeek)CheckableDaysOfWeek.Where(cd => cd.IsSelected).Select(cd => (int)cd.SpecificDayOfWeek).Sum();
-            return _dayWeek.GetCron();
+            _Model.SumOfDays = (DaysOfWeek)CheckableDaysOfWeek.Where(cd => cd.IsSelected).Select(cd => (int)cd.SpecificDayOfWeek).Sum();
+            return _Model.GetCron();
         }
     }
 }
